@@ -1,0 +1,47 @@
+import React from 'react'
+
+ const Button = ({
+    children ,
+    variant = "primary",
+    size = "md" ,
+    type = "button",
+    onClick ,
+    className = "",
+    disabled = false, 
+ }) => {
+
+    const variants = {
+       primary : "bg-blue-600 text-white hover:bg-blue-700" ,
+       secondary : "bg-gray-200 text-gray-800 hover:bg-gray-300" ,
+       outline : "border border-blue-600 text-blue-600 hover:bg-blue-50" ,
+       danger : "bg-red-600 text-white hover:bg-red-700"
+    };
+
+    const sizes = {
+        sm: "px-3 py-1 text-sm",
+        md: "px-5 py-2 text-base",
+        lg: "px-6 py-3 text-lg",
+    }
+
+  return (
+    <button
+       type = {type}
+       onClick = {onClick}
+       disabled = {disabled}
+       className ={`
+        rounded-full
+        font-medium
+        transition-all
+        duration-200
+        ${variants[variant]}
+        ${sizes[size]}
+        ${disabled ? "opacity-50 cursor-not-allowed" : ""}
+        ${className}
+        `}
+    >
+        {children}
+    </button>
+  )
+}
+
+export default Button ;
