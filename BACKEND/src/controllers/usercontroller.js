@@ -90,9 +90,10 @@ const bcrypt = require("bcrypt");
                     sameSite : "strict" ,
                     secure : process.env.NODE_ENV === "production"
                 })
-
+                    console.log(token);
                return res.status(200).json({
-                    message : "user loggedIn Successfully",
+               
+                    message : "user loggedIn Successfully", token ,
                       user: {
                               id: user._id,
                               username: user.username,

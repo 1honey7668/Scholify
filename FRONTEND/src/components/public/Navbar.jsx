@@ -3,7 +3,7 @@ import Button from "../ui/Button";
 
 const Navbar = () => {
   return (
-     <nav className="w-full bg-blue-950 text-white">
+     <nav className="w-full bg-[#100F57] text-white">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
                 {/* logo */}
                 <div className="text-xl font-bold">

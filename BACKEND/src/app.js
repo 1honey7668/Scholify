@@ -5,6 +5,7 @@ const cors = require("cors");
 
 
 const authRoutes = require("./routes/authRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 
 require("dotenv").config({
@@ -26,6 +27,7 @@ app.use(cors({
 connectDB();
 
 app.use("/api/auth" , authRoutes);
+app.use("/api/admin" , adminRoutes);
 
 app.get("/" , (req , res)=>{
     res.send("hello world");
