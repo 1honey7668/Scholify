@@ -1,6 +1,6 @@
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-const { user } = require("../models/user");
+import jwt from "jsonwebtoken"
+import bcrypt from "bcrypt";
+import User   from "../models/user.js";
 
 
 const isUserAuthenticate = async (req , res , next)=>{
@@ -15,7 +15,7 @@ const isUserAuthenticate = async (req , res , next)=>{
 
        const decoded = await jwt.verify(token , process.env.JWT_SECRET);
 
-       const user = await user.findbyId(decoded.userId).select("-password");
+       const user = await User.findById(decoded.userId).select("-password");
 
        if(!user)
        {
